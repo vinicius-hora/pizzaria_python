@@ -17,16 +17,29 @@ def venda(sabor, valor, data, tamanho):
     cadastro_nome = input("digite o nome sabor: ")
     cadastro_tamanho = input('Digite o tamanho B, M, G ou F: ')
     cadastro_preco = input("digite o valor: ")
-    if cadastro_preco.isdigit():
-        sabor.append(cadastro_nome)
-        tamanho.append(cadastro_tamanho)
-        valor.append(float(cadastro_preco))
-        data.append(datetime.today())
-    else:
+    while cadastro_preco.isalpha():
         cadastro_preco = input("valor incorreto, digite novamente: ")
-        sabor.append(cadastro_nome)
-        valor.append(float(cadastro_preco))
-        data.append(datetime.today())
+        os.system("cls")
+
+    sabor.append(cadastro_nome)
+    tamanho.append(cadastro_tamanho)
+    valor.append(float(cadastro_preco))
+    data.append(datetime.today())
+    print("Venda cadastrada \n")
+    
+
+def cadastrar_compra(item_compra, valor_compra, data_compra):
+    cadastro_item = input("Digite o nome do item comprado ou número da nota: ")
+    cadastro_valor = input("Digite o valor da compra: ")
+    while cadastro_valor.isalpha():
+        cadastro_valor = input("Valor só pode ser númerico, digite novamente: ")
+        os.system("cls")
+   
+    item_compra.append(cadastro_item)
+    valor_compra.append(float(cadastro_valor))
+    data_compra.append(datetime.today())
+    print("Compra cadastrada \n")
+
 
 
 def mostrar_venda():
@@ -37,12 +50,26 @@ def mostrar_venda():
         print(f'Data:{mostrar_data} ')
         print('--------------------------\n')
 
-def gerar_relatorio(valor):
+def mostrar_comra():
+    for mostrar_item, mostrar_valor, mostrar_data in zip(item_compra, valor_compra, data_compra):
+        print(f'Item: { mostrar_item}')
+        print(f'Item: { mostrar_valor}')
+        print(f'Item: { mostrar_data}')
+        print('--------------------------\n')
+
+def gerar_relatorio_venda(valor):
     total_venda = 0
     for valor_venda in valor:
         total_venda += float(valor_venda)
 
     return total_venda
+
+def gerar_relatorio_compra(valor_compra):
+    total_compra = 0
+    for v_compra in valor_compra:
+        total_compra+= float(v_compra)
+
+    return total_compra
 
 
 
@@ -62,19 +89,23 @@ while (opcao != 0):
         venda(sabor, valor, data, tamanho)
 
     elif opcao == 2:
-        print('ainda não implementado') 
+        cadastrar_compra(item_compra, valor_compra, data_compra)
 
     elif opcao == 3:
+        os.system("cls")
         mostrar_venda()
         
     elif opcao == 4:
-        print('ainda não implementado')
+       os.system("cls")
+       mostrar_comra()
 
     elif opcao == 5:
         print('ainda não implementado')
 
     elif opcao == 6:
-        print(f'Valor total de venda: {float(gerar_relatorio(valor))} \n')
+        print(f'Valor total de venda: {float(gerar_relatorio_venda(valor))} \n')
+        print(f'Valor total de compra: {float(gerar_relatorio_compra(valor_compra))} \n')
+        print(f'Saldo: {float(gerar_relatorio_venda(valor) - gerar_relatorio_compra(valor_compra))} \n')
                 
 
     elif opcao == 0:

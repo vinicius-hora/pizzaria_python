@@ -1,104 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>tela_venda</class>
- <widget class="QMainWindow" name="tela_venda">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
-    <height>425</height>
+    <width>638</width>
+    <height>432</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Pizzaria e Lanchonete Pai e Filho</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="sabor_label">
+   <widget class="QLabel" name="label_compra">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>50</y>
-      <width>81</width>
-      <height>41</height>
+      <x>100</x>
+      <y>70</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Sabor:</string>
+     <string>Nota Fiscal ou Item:</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="venda_tamanho_text">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>110</y>
-      <width>281</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="valor_label">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>160</y>
-      <width>81</width>
-      <height>41</height>
+      <x>100</x>
+      <y>150</y>
+      <width>151</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Valor:</string>
+     <string>Valor: </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_cancelar">
+   <widget class="QPushButton" name="pushButton_cancelar_compra">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>440</x>
       <y>270</y>
       <width>91</width>
       <height>51</height>
      </rect>
     </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
     <property name="text">
      <string>Cancelar</string>
     </property>
-   </widget>
-   <widget class="QLabel" name="tamanho_label">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>100</y>
-      <width>81</width>
-      <height>41</height>
-     </rect>
+    <property name="autoDefault">
+     <bool>false</bool>
     </property>
-    <property name="styleSheet">
-     <string notr="true">font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Tamanho:</string>
+    <property name="default">
+     <bool>false</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="venda_sabor_text">
+   <widget class="QPushButton" name="pushButton_comprar">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>60</y>
-      <width>281</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_cadastrar">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
+      <x>100</x>
       <y>270</y>
       <width>91</width>
       <height>51</height>
@@ -108,11 +81,21 @@
      <string>Cadastrar</string>
     </property>
    </widget>
-   <widget class="QDoubleSpinBox" name="valor_text">
+   <widget class="QLineEdit" name="lineEdit_compra_item">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>170</y>
+      <x>280</x>
+      <y>80</y>
+      <width>281</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_compra_valor">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>160</y>
       <width>62</width>
       <height>22</height>
      </rect>
@@ -127,7 +110,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>609</width>
+     <width>638</width>
      <height>21</height>
     </rect>
    </property>
